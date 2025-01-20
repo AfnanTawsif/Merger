@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slides Merger</title>
+    <style>
+        /* Body styling */
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin-left: 5%; /* Left margin as a percentage of screen width */
+            margin-right: 5%; /* Right margin as a percentage of screen width */
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        h1, h3 {
+            color: #FFD700;
+            margin-bottom: 10px;
+        }
+		
+		h2 {
+            color: #FFD700;
+            margin-bottom: 10px;
+			border-bottom: 2px solid #FFD700;
+            padding-bottom: 5px;
+        }
+
+        a {
+            color: #1E90FF;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Code inside paragraphs: allow word breaking */
+        p code {
+            background-color: #333;
+            color: #00FF7F;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: "Courier New", Courier, monospace;
+            word-wrap: break-word; /* Enables breaking long words */
+            white-space: normal; /* Allows text to wrap */
+            display: inline; /* Ensures inline behavior */
+        }
+
+        /* Code inside pre: each line in its own box */
+        pre {
+            background-color: #333;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto; /* Horizontal scrolling for long lines */
+            padding-left: 20px;
+			
+        }
+
+        pre code {
+            color: #00FF7F;
+            font-family: "Courier New", Courier, monospace;
+            white-space: pre; /* Prevents wrapping */
+        }
+
+        pre div {
+            background-color: #444; /* Slightly lighter background for individual boxes */
+            margin: 5px 0; /* Space between each line */
+            padding: 5px;
+            border-radius: 3px;
+            position: relative;
+            padding-right: 55px; /* Ensure space for copy button */
+        }
+
+        .copy-btn {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            background-color: #1E90FF;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .copied {
+            background-color: #32CD32; /* Green color for the tick button */
+        }
+
+        li code {
+            background-color: #333;
+            color: #00FF7F;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: "Courier New", Courier, monospace;
+            word-wrap: break-word; /* Enables breaking long words */
+            white-space: normal; /* Allows text to wrap */
+            display: inline; /* Ensures inline behavior */
+        }
+
+        ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+
+        /* Banner image styling */
+        #banner {
+            display: block;
+            margin: 10px auto; /* Center the banner */
+            width: 70%; /* Fill 70% of the screen width */
+            max-width: 400px; /* Set a maximum width for the banner */
+            height: auto; /* Maintain aspect ratio based on the width */
+        }
+		a img:hover {
+        transform: scale(1.2);
+        filter: brightness(1.5);
+        transition: transform 0.3s ease, filter 0.3s ease;
+        }
+		strong {
+    font-weight: normal; /* No bold text */
+    color: #FFC107
+    }
+		.intro-heading {
+         margin-top: 0px; /* Adjust this value as needed */
+        }
+		p code.error-text {
+    background-color: #333; /* Dark background for consistency */
+    color: #FF6347; /* Red color for the error text */
+    padding: 2px 5px;
+    border-radius: 3px;
+    font-family: "Courier New", Courier, monospace;
+    word-wrap: break-word;
+    white-space: normal;
+    display: inline;
+   }
+   /* Style for subheadings with yellow background */
+    .yellow-subheading {
+        background-color: #FFD700; /* Yellow background */
+        color: #000000; /* Black text */
+        padding: 5px 10px;
+        border-radius: 8px; /* Rounded corners */
+        display: inline-block; /* Prevent stretching across the line */
+        margin-bottom: 10px;
+    }
+
+    </style>
+</head>
+<body>
+
+    <!-- Banner Image -->
+    <img id="banner" src="images/banner.jpg" alt="Banner Image">
+
+    <h2 class="intro-heading">Introduction</h2>
+    <p>Are you tired of taking handwritten notes for online classes? What if you could print them easily without the hassle of editing manually?</p>
+    <p>This Python script automates the process of merging class slides, formatting them beautifully, and optimizing their layout for A4-size pages. It also allows color inversion for better printing results.</p>
+
+    <h2>How to Use</h2>
+    <p><strong>Using this script is simple:</strong></p>
+    <ul>
+        <li>Place your PDF files into the <code>Input</code> folder.</li>
+        <li>Run the script (<code>Merge.py</code>) and choose your preferences.</li>
+        <li>The processed files will be saved in the <code>Output</code> folder.</li>
+    </ul>
+    <p><strong>Available Options:</strong></p>
+    <ul>
+        <li><u>Merge PDFs:</u> Combine all PDF files in the input folder into a single PDF.</li>
+        <li><u>Merge Class Slides:</u> The core feature of this script which makes class slides printable. It includes:
+            <ul>
+                <li><u>Quality Settings:</u> Choose the quality of the output.</li>
+                <li><u>Slides Per Page:</u> Select how many slides appear on each page (3 per page recommended for printing).</li>
+                <li><u>Color Inversion:</u> Toggle this option to <i>"Yes"</i> if the slides have black backgrounds.</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h2>Setup Instructions</h2>
+
+    <h3 class="yellow-subheading">For Windows</h3>
+    <ol>
+        <li><strong>Install Python:</strong>
+            <p>Download Python 3.12.7 from the <a href="https://www.python.org/downloads/release/python-3127/" target="_blank">official website</a>. During installation, ensure you select the <i>"Add Python to PATH"</i> option, then proceed with the default settings.</p>
+        </li>
+        <li><strong>Install Microsoft C++ Build Tools:</strong>
+            <p>Download from <a href="https://visualstudio.microsoft.com/visual-cpp-build-tools/" target="_blank">here</a>. Launch the installer, go to the <i>"Available"</i> tab, and select any package to install.</p>
+            <p>Under <i>"Desktop & Mobile"</i>, choose <i>"Desktop development with C++"</i>. On the right panel, check <i>"Windows 11 SDK"</i> along with the default selections, and click <i>"Install"</i>.</p>
+        </li>
+        <li><strong>Download and Set Up the Script:</strong>
+            <p>Download the script from <a href="https://drive.google.com/file/d/1qV7CmYO3ZYIiKkhRr6dpP9vVioE-uw9r/view?usp=drivesdk" target="_blank">here</a>. Extract the archive to folder name and open the folder. Launch the <code>Setup_Library.bat</code> file to install the required libraries.</p>
+            <p>If you encounter errors during library installation, download precompiled <code>.whl</code> files for problematic libraries from <a href="https://pypi.org/" target="_blank">PyPI</a>, place them in the script's folder, and update the pip install command in the batch file using Notepad++ (replace those library names with the whl file names with extension). Save and rerun the batch file.</p>
+        </li>
+    </ol>
+
+    <h3 class="yellow-subheading">For Android</h3>
+    <ol>
+        <li><strong>Install Required Apps:</strong>
+            <p>Install <a href="https://play.google.com/store/search?q=userland&c=apps" target="_blank">UserLAnd</a> and <a href="https://play.google.com/store/apps/details?id=ru.zdevs.zarchiver" target="_blank">ZArchiver</a> from the Play Store. Open UserLAnd and install the <i>"Ubuntu Minimal Terminal"</i> package. Once set up, you’ll be redirected to the Ubuntu terminal interface.</p>
+        </li>
+        <li><strong>Set Up Python:</strong>
+            <p>Run the following command in the terminal:</p>
+            <pre><code><div>sudo apt update && sudo apt upgrade -y && sudo apt install python3 python3-pip -y && sudo pip3 install PyPDF2 reportlab pymupdf colorama fitz frontend tools --timeout=120 && sudo pip3 uninstall pymupdf -y && sudo pip3 install pymupdf --timeout=120 <button class="copy-btn" onclick="copyText(this)">Copy</button></div></code></pre>
+        </li>
+        <li><strong>Download and Place the Script:</strong>
+            <p>Download the script from <a href="https://drive.google.com/file/d/1qTXvQrgLlSg0004WBC5WXS_wA3L1yyP9/view?usp=drivesdk" target="_blank">here</a>. Use ZArchiver to extract the zip to <code>/sdcard/Android/data/tech.ula/files/</code>   (this <code>files</code> folder must contain <code>Merge.py</code>, <code>log.txt</code>, <code>Input</code>, <code>Output</code>, <code>Temp</code>, <code>static</code>)</p>
+            <p><u>Note:</u> You must manually navigate to this location to place input files and retrieve output files.</p>
+        </li>
+        <li><strong>Run the Script:</strong>
+            <p>Open the UserLAnd terminal and run:</p>
+            <pre><code><div>cd /sdcard/Android/data/tech.ula/files/ && sudo python3 Merge.py <button class="copy-btn" onclick="copyText(this)">Copy</button></div></code></pre>
+            <p>This will launch the script. Save this command for future use. To exit, select <i>"Exit"</i> from the notification panel. To rerun the script, reopen UserLAnd, select the Ubuntu session, and paste the saved command.</p>
+        </li>
+    </ol>
+
+    <h2>Troubleshooting</h2>
+    <p><strong>Issue:</strong> <code class="error-text">Fitz has no attribute 'open'</code></p>
+    <ul>
+        <li><u>Fix for Windows:</u>
+            <pre><code><div>pip uninstall pymupdf <button class="copy-btn" onclick="copyText(this)">Copy</button></div>
+<div>pip install pymupdf <button class="copy-btn" onclick="copyText(this)">Copy</button></div></code></pre>
+        </li>
+        <li><u>Fix for Android:</u>
+            <pre><code><div>sudo pip3 uninstall pymupdf <button class="copy-btn" onclick="copyText(this)">Copy</button></div>
+<div>sudo pip3 install pymupdf <button class="copy-btn" onclick="copyText(this)">Copy</button></div></code></pre>
+        </li>
+    </ul>
+
+    <h2>Contact</h2>
+    <p>Feel free to reach out for help:</p>
+    <a href="https://www.facebook.com/afnan.tawsif.3" target="_blank" style="margin-right: 5px;">
+       <img src="images/facebook.png" alt="Facebook" style="width: 30px; height: 30px;">
+   </a>
+   <a href="https://wa.me/+8801714293771" target="_blank" style="margin-right: 5px;">
+       <img src="images/whatsapp.png" alt="WhatsApp" style="width: 30px; height: 30px;">
+   </a>
+   <a href="mailto:afnantawsif778@gmail.com" target="_blank">
+       <img src="images/mail.png" alt="Mail" style="width: 30px; height: 30px;">
+   </a>
+
+
+    <script>
+        function copyText(button) {
+            // Get the text inside the div, excluding the button itself
+            var text = button.parentElement.innerText.replace("Copy", "").trim();
+
+            // Create a temporary textarea element
+            var tempTextArea = document.createElement("textarea");
+            tempTextArea.value = text;
+            document.body.appendChild(tempTextArea);
+            tempTextArea.select();
+            document.execCommand("copy");
+            document.body.removeChild(tempTextArea);
+
+            // Change button style and text to indicate success
+            button.classList.add("copied");
+            button.textContent = "Copied!";
+            setTimeout(function() {
+                button.classList.remove("copied");
+                button.textContent = "Copy";
+            }, 2000);
+        }
+    </script>
+	<footer style="margin-top: 30px; text-align: center; color: #888; font-size: 12px;">
+    <p>© 2025 Slides Merger. All rights reserved.</p>
+    </footer>
+</footer>
+</body>
+</html>
