@@ -28,6 +28,11 @@
 			border-bottom: 2px solid #FFD700;
             padding-bottom: 5px;
         }
+		
+		h4 {
+            color: #FF4500; /* Different color for method headings */
+            margin-bottom: 10px;
+        }
 
         a {
             color: #1E90FF;
@@ -162,7 +167,7 @@
     <p><strong>Using this script is simple:</strong></p>
     <ul>
         <li>Place your PDF files into the <code>Input</code> folder.</li>
-        <li>Run the script (<code>Merge.py</code>) and choose your preferences.</li>
+        <li>Run the script and choose your preferences.</li>
         <li>The processed files will be saved in the <code>Output</code> folder.</li>
     </ul>
     <p><strong>Available Options:</strong></p>
@@ -179,7 +184,16 @@
 
     <h2>Setup Instructions</h2>
 
-    <h3 class="yellow-subheading">For Windows</h3>
+    <h3 class="yellow-subheading">Windows</h3>
+	<h4>Method 1 <span class="recommended" style="color: #2DAA2D;">(Recommended):</span></h4>
+	<ol>
+        <li><strong>Download & Extract:</strong></li>
+		    <p>Download the archive from <a href="https://github.com/AfnanTawsif/Merger/releases/download/v3.0/Merger_v3_windows_compiled.zip target="_blank"">here</a>. Extract the archive to a folder.</p>
+        <li><strong>Run the Script:</strong>
+		<p>Open the folder and launch <code>Merge.exe</code></p>
+        </li>
+    </ol>
+    <h4>Method 2:</h4>
     <ol>
         <li><strong>Install Python:</strong>
             <p>Download Python 3.12.7 from the <a href="https://www.python.org/downloads/release/python-3127/" target="_blank">official website</a>. During installation, ensure you select the <i>"Add Python to PATH"</i> option, then proceed with the default settings.</p>
@@ -188,13 +202,27 @@
             <p>Download from <a href="https://visualstudio.microsoft.com/visual-cpp-build-tools/" target="_blank">here</a>. Launch the installer, go to the <i>"Available"</i> tab, and select any package to install.</p>
             <p>Under <i>"Desktop & Mobile"</i>, choose <i>"Desktop development with C++"</i>. On the right panel, check <i>"Windows 11 SDK"</i> along with the default selections, and click <i>"Install"</i>.</p>
         </li>
-        <li><strong>Download and Set Up the Script:</strong>
-            <p>Download the script from <a href="https://github.com/AfnanTawsif/Merger/releases/download/v3.0/Merger_v3_windows.zip" target="_blank">here</a>. Extract the archive to folder name and open the folder. Launch the <code>Setup_Library.bat</code> file to install the required libraries.</p>
+        <li><strong>Download & Set Up the Libraries:</strong>
+            <p>Download the script from <a href="https://github.com/AfnanTawsif/Merger/releases/download/v3.0/Merger_v3_windows.zip" target="_blank">here</a>. Extract the archive to a folder and open the folder. Launch the <code>Setup_Library.bat</code> file to install the required libraries.</p>
             <p>If you encounter errors during library installation, download precompiled <code>.whl</code> files for problematic libraries from <a href="https://pypi.org/" target="_blank">PyPI</a>, place them in the script's folder, and update the pip install command in the batch file using Notepad++ (replace those library names with the whl file names with extension). Save and rerun the batch file.</p>
+        </li>
+		<li><strong>Run the Script:</strong>
+		 <p>Launch <code>Merge.py</code>.</p>
+		 </li>
+    </ol>
+	<h3 class="yellow-subheading">Linux</h3>
+    <ol>
+        <li><strong>Download & Extract:</strong></li>
+		    <p>Download the archive from <a href="https://github.com/AfnanTawsif/Merger/releases/download/v3.0/Merger_v3_linux_compiled.zip" target="_blank">here</a>. Extract the archive to a folder.</p>
+        <li><strong>Run the Script:</strong>
+		<p>Open the terminal in the folder and run the following commands:</p>
+		    <pre><code><div>chmod +x Merge.bin <button class="copy-btn" onclick="copyText(this)">Copy</button></div>
+            <div>./Merge.bin <button class="copy-btn" onclick="copyText(this)">Copy</button></div></code></pre>
         </li>
     </ol>
 
-    <h3 class="yellow-subheading">For Android</h3>
+    <h3 class="yellow-subheading">Android</h3>
+	<p>Though we will be using a Linux distro (Ubuntu) in Android, we can't use the pre-compiled <code>Merge.bin</code> because Android has restrictions regarding the permissions.</p>
     <ol>
         <li><strong>Install Required Apps:</strong>
             <p>Install <a href="https://play.google.com/store/search?q=userland&c=apps" target="_blank">UserLAnd</a> and <a href="https://play.google.com/store/apps/details?id=ru.zdevs.zarchiver" target="_blank">ZArchiver</a> from the Play Store. Open UserLAnd and install the <i>"Ubuntu Minimal Terminal"</i> package. Once set up, you’ll be redirected to the Ubuntu terminal interface.</p>
@@ -203,9 +231,9 @@
             <p>Run the following command in the terminal:</p>
             <pre><code><div>sudo apt update && sudo apt upgrade -y && sudo apt install python3 python3-pip -y && sudo pip3 install PyPDF2 reportlab pymupdf colorama fitz frontend tools --timeout=120 && sudo pip3 uninstall pymupdf -y && sudo pip3 install pymupdf --timeout=120 <button class="copy-btn" onclick="copyText(this)">Copy</button></div></code></pre>
         </li>
-        <li><strong>Download and Place the Script:</strong>
+        <li><strong>Download & Place the Script:</strong>
             <p>Download the script from <a href="https://github.com/AfnanTawsif/Merger/releases/download/v3.0/Merger_v3_android.zip" target="_blank">here</a>. Use ZArchiver to extract the zip to <code>/sdcard/Android/data/tech.ula/files/</code>   (this <code>files</code> folder must contain <code>Merge.py</code>, <code>log.txt</code>, <code>Input</code>, <code>Output</code>, <code>Temp</code>, <code>static</code>)</p>
-            <p><u>Note:</u> You must manually navigate to this location to place input files and retrieve output files.</p>
+            <p><u>Note:</u> You have to manually navigate to this location to place input files and retrieve output files.</p>
         </li>
         <li><strong>Run the Script:</strong>
             <p>Open the UserLAnd terminal and run:</p>
@@ -213,19 +241,6 @@
             <p>This will launch the script. Save this command for future use. To exit, select <i>"Exit"</i> from the notification panel. To rerun the script, reopen UserLAnd, select the Ubuntu session, and paste the saved command.</p>
         </li>
     </ol>
-
-    <h2>Troubleshooting</h2>
-    <p><strong>Issue:</strong> <code class="error-text">Fitz has no attribute 'open'</code></p>
-    <ul>
-        <li><u>Fix for Windows:</u>
-            <pre><code><div>pip uninstall pymupdf <button class="copy-btn" onclick="copyText(this)">Copy</button></div>
-<div>pip install pymupdf <button class="copy-btn" onclick="copyText(this)">Copy</button></div></code></pre>
-        </li>
-        <li><u>Fix for Android:</u>
-            <pre><code><div>sudo pip3 uninstall pymupdf <button class="copy-btn" onclick="copyText(this)">Copy</button></div>
-<div>sudo pip3 install pymupdf <button class="copy-btn" onclick="copyText(this)">Copy</button></div></code></pre>
-        </li>
-    </ul>
 
     <h2>Contact</h2>
     <p>Feel free to reach out for help:</p>
