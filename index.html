@@ -163,7 +163,13 @@
     <h2 class="intro-heading">Introduction</h2>
     <p>Are you tired of taking handwritten notes for online classes? What if you could print them easily without the hassle of editing manually?</p>
     <p>This Python script automates the process of merging class slides, formatting them beautifully, and optimizing their layout for A4-size pages. It also allows color inversion for better printing results.</p>
-
+    
+	<h2>Why Choose Merger?</h2>
+	<p>Despite being Free and Open-source, Merger has-</p>
+    <p><strong>High Performance:</strong> Merger is designed with cutting-edge optimization techniques that works intelligently into layers, making it the fastest solution for merging and formatting slides for printout.</p>
+    <p><strong>Print-Ready Output:</strong> Specially tailored for class slides (16:9), it ensures an optimal layout on A4 pages, maximizing clarity and readability.</p>
+    <p><strong>Feature-Packed:</strong> With built-in color inversion, slide bordering, page numbering, strategy choice, 1st slide removal with indicator, custom cover page and work summary - it covers all essential needs without additional tools.</p>
+	
     <h2>How to Use</h2>
     <p><strong>Using this script is simple:</strong></p>
     <ul>
@@ -174,52 +180,49 @@
     <p><strong>Available Options:</strong></p>
     <ul>
         <li><u>Merge PDFs:</u> Combine all PDF files in the input folder into a single PDF.</li>
-        <li><u>Merge Class Slides:</u> The core feature of this script which makes class slides printable. It includes:
+        <li><u>Merge class slides:</u> The core feature of this script which makes class slides printable. It includes:
             <ul>
-                <li><u>Quality Settings:</u> Choose the quality of the output.</li>
-                <li><u>Slides Per Page:</u> Select how many slides appear on each page (3 per page recommended for printing).</li>
-                <li><u>Color Inversion:</u> Toggle this option to <i>"Yes"</i> if the slides have black backgrounds.</li>
+                <li><u>Slide count in a page:</u> Select how many slides should be appeared on each page.</li>
+				<li><u>Remove 1st slides:</u> Choose if you want to remove the typical cover slide of each pdf.</li>
+				    <ul><li><u> Indicate beginning of new pdf:</u> You can add star symbols in the margins to indicate initialization of new pdf's or lectures. Best alternative to cover slides- saving page space and printing cost.</li></ul>
+                <li><u>Select strategy:</u> Vector Assembly for best print quality, Pixel Construct for minimal loading time in digital view. To print Vector Assembly mode's output, consider opening the pdf using sumatra and then you can print using adobe pdf print.</li>
+				<li><u>Select Output DPI:</u> Choose the quality of the output in pixel construct mode.</li>
+				<li><u>Color inversion:</u> Toggle this option to <i>"Yes"</i> if the slides have black backgrounds.</li>
+				<li><u>Cover page:</u> Custom cover page with minimal design. Includes input fields for Title, Chapter No, Subject and Student Name.</li>
             </ul>
         </li>
     </ul>
 
     <h2>Setup Instructions</h2>
-
+	
     <h3 class="yellow-subheading">Windows</h3>
-	<h4>Method 1 <span class="recommended" style="color: #2DAA2D;">(Recommended):</span></h4>
-	<ol>
-        <li><strong>Download & Extract:</strong></li>
-		    <p>Download the archive from <a href="https://github.com/AfnanTawsif/Merger/releases/download/v3.0/Merger_v3_windows_compiled.zip" target="_blank">here</a>. Extract the archive to a folder.</p>
-        <li><strong>Run the Script:</strong>
-		<p>Open the folder and launch <code>Merge.exe</code></p>
-        </li>
-    </ol>
-    <h4>Method 2:</h4>
     <ol>
         <li><strong>Install Python:</strong>
-            <p>Download Python 3.12.7 from the <a href="https://www.python.org/downloads/release/python-3127/" target="_blank">official website</a>. During installation, ensure you select the <i>"Add Python to PATH"</i> option, then proceed with the default settings.</p>
-        </li>
-        <li><strong>Install Microsoft C++ Build Tools:</strong>
-            <p>Download from <a href="https://visualstudio.microsoft.com/visual-cpp-build-tools/" target="_blank">here</a>. Launch the installer, go to the <i>"Available"</i> tab, and select any package to install.</p>
-            <p>Under <i>"Desktop & Mobile"</i>, choose <i>"Desktop development with C++"</i>. On the right panel, check <i>"Windows 11 SDK"</i> along with the default selections, and click <i>"Install"</i>.</p>
+            <p>Download Python from the <a href="https://www.python.org/downloads" target="_blank">official website</a>. During installation, ensure you select the <i>"Add Python to PATH"</i> option, then proceed with the default settings.</p>
         </li>
         <li><strong>Download & Set Up the Libraries:</strong>
-            <p>Download the script from <a href="https://github.com/AfnanTawsif/Merger/releases/download/v3.0/Merger_v3_windows.zip" target="_blank">here</a>. Extract the archive to a folder and open the folder. Launch the <code>Setup_Library.bat</code> file to install the required libraries.</p>
-            <p>If you encounter errors during library installation, download precompiled <code>.whl</code> files for problematic libraries from <a href="https://pypi.org/" target="_blank">PyPI</a>, place them in the script's folder, and update the pip install command in the batch file using Notepad++ (replace those library names with the whl file names with extension). Save and rerun the batch file.</p>
+            <p>Download the script from <a href="https://github.com/AfnanTawsif/Merger/releases/download/Merger-v4.0.3/Merger_v4.0.3+.zip" target="_blank">here</a>. Extract the archive to a folder.</p>
+            <p>Open cmd and run the following command:</p>
+            <pre><code><div> pip install mergerz <button class="copy-btn" onclick="copyText(this)">Copy</button></div></code></pre>
         </li>
 		<li><strong>Run the Script:</strong>
-		 <p>Launch <code>Merge.py</code>.</p>
-		 </li>
+		    <p>Launch <code>Merge.py</code>.</p>
+		</li>
     </ol>
+
 	<h3 class="yellow-subheading">Linux</h3>
     <ol>
-        <li><strong>Download & Extract:</strong></li>
-		    <p>Download the archive from <a href="https://github.com/AfnanTawsif/Merger/releases/download/v3.0/Merger_v3_linux_compiled.zip" target="_blank">here</a>. Extract the archive to a folder.</p>
+        <li><strong>Download & Set Up the Libraries:</strong>
+		<p>Download the archive from <a href="https://github.com/AfnanTawsif/Merger/releases/download/Merger-v4.0.3/Merger_v4.0.3+.zip" target="_blank">here</a>. Extract the archive to a folder.</p>
+	    <p>Open terminal in the folder and run following commands:</p>
+		    <pre><code><div> python3 -m venv myenv <button class="copy-btn" onclick="copyText(this)">Copy</button></div>
+            <div> source myenv/bin/activate <button class="copy-btn" onclick="copyText(this)">Copy</button></div>
+		    <div> pip install mergerz <button class="copy-btn" onclick="copyText(this)">Copy</button></div></code></pre>
+	    </li>
         <li><strong>Run the Script:</strong>
-		<p>Open terminal in the folder and run following commands:</p>
-		    <pre><code><div>chmod +x Merge.bin <button class="copy-btn" onclick="copyText(this)">Copy</button></div>
-            <div>./Merge.bin <button class="copy-btn" onclick="copyText(this)">Copy</button></div></code></pre>
-        </li>
+		<p>Make sure virtual environment is activated and run following command in the folder:</p>
+		    <pre><code><div> python3 Merge.py <button class="copy-btn" onclick="copyText(this)">Copy</button></div></code></pre>
+	    </li>
     </ol>
 
     <h3 class="yellow-subheading">Android</h3>
@@ -230,10 +233,10 @@
         </li>
         <li><strong>Set Up Python:</strong>
             <p>Run the following command in the terminal:</p>
-            <pre><code><div>sudo apt update && sudo apt upgrade -y && sudo apt install python3 python3-pip -y && sudo pip3 install PyPDF2 reportlab pymupdf colorama fitz frontend tools --timeout=120 && sudo pip3 uninstall pymupdf -y && sudo pip3 install pymupdf --timeout=120 <button class="copy-btn" onclick="copyText(this)">Copy</button></div></code></pre>
+            <pre><code><div> sudo apt update && sudo apt upgrade -y && sudo apt install python3 python3-pip -y && sudo pip install mergerz <button class="copy-btn" onclick="copyText(this)">Copy</button></div></code></pre>
         </li>
         <li><strong>Download & Place the Script:</strong>
-            <p>Download the script from <a href="https://github.com/AfnanTawsif/Merger/releases/download/v3.0/Merger_v3_android.zip" target="_blank">here</a>. Use ZArchiver to extract the zip to <code>/sdcard/Android/data/tech.ula/files/</code>   (this <code>files</code> folder must contain <code>Merge.py</code>, <code>log.txt</code>, <code>Input</code>, <code>Output</code>, <code>Temp</code>, <code>static</code>)</p>
+            <p>Download the script from <a href="https://github.com/AfnanTawsif/Merger/releases/download/Merger-v4.0.3/Merger_v4.0.3+.zip" target="_blank">here</a>. Use ZArchiver to extract the zip to <code>/sdcard/Android/data/tech.ula/files/</code>   (this <code>files</code> folder must contain <code>Merge.py</code>, <code>Input</code>, <code>Output</code>, <code>static</code>, <code>Temp</code>)</p>
             <p><u>Note:</u> You have to manually navigate to this location to place input files and retrieve output files.</p>
         </li>
         <li><strong>Run the Script:</strong>
@@ -242,6 +245,9 @@
             <p>This will launch the script. Save this command for future use. To exit, select <i>"Exit"</i> from the notification panel. To rerun the script, reopen UserLAnd, select the Ubuntu session, and paste the saved command.</p>
         </li>
     </ol>
+	
+	<h2>Changelog</h2>
+	<p>View full changelogs on <a href="https://github.com/AfnanTawsif/Merger/releases" target="_blank">github</a>.</p>
 
     <h2>Contact</h2>
     <p>Feel free to reach out for help:</p>
